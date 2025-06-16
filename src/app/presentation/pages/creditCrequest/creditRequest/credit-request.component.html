@@ -1,0 +1,293 @@
+<!-- Título -->
+<div class="h-[65px] flex items-center justify-between px-5 py-1" style="box-shadow: 0px 3px 5px 0px #0000001A;">
+  <button>
+    <img src="/svgs/icon_arrow-back.svg" alt="Volver">
+  </button>
+  <h5 class="text-xl font-semibold text-[#021442]">Solicitud de crédito</h5>
+</div>
+
+<!-- Paso actual -->
+<app-stepper
+  [steps]="[
+    { label: 'Actualizar datos' },
+    { label: 'Datos para desembolso' },
+    { label: 'Datos del seguro' }
+  ]"
+  [currentStep]="currentStep"
+></app-stepper>
+
+<div>
+  <ng-container [ngSwitch]="currentStep">
+
+    <!-- Paso 1 -->
+    <ng-container *ngSwitchCase="1">
+      <!-- <app-actualizar-datos></app-actualizar-datos> -->
+      <div>
+        <div class="bg-[#E6FBFF] p-5 mb-6 text-base text-center">
+          <div class="bg-[#279CCD] h-[29px] p-1 mb-[10px] rounded-full">
+              <p class="font-extrabold text-white">Estás solicitando un crédito por:</p>
+          </div>
+          <p class="font-normal text-[#021442] mb-1">Monto: <span class="font-extrabold">$4.000.000</span></p>
+          <p class="font-normal text-[#021442] mb-1">Plazo: <span class="font-extrabold">12 meses</span></p>
+          <p class="font-normal text-[#021442]">Cuota mensual aproximada: <span class="font-extrabold">$402.460</span></p>
+        </div>
+        
+        <div class="w-full flex flex-col justify-center items-center px-[20px] md:px-12 lg:px-24">
+            <div class="flex flex-col gap-6 mb-9">
+                <!-- Estado civil -->
+                <div>
+                  <label class="text-[#021442] text-base font-semibold">
+                    Estado civil <span class="text-[#DF512C]">*</span>
+                  </label>
+                  <select class="w-full md:w-[600px] lg:w-[916px] form-control mt-4">
+                    <option disabled selected>Selecciona un estado civil</option>
+                    <option>Soltero(a)</option>
+                    <option>Casado(a)</option>
+                    <option>Unión libre</option>
+                    <option>Separado(a)</option>
+                  </select>
+                </div>
+              
+                <!-- Tipo de vivienda -->
+                <div>
+                  <label class="text-[#021442] text-base font-semibold">
+                    Tipo de vivienda <span class="text-[#DF512C]">*</span>
+                  </label>
+                  <select class="w-full md:w-[600px] lg:w-[916px] form-control mt-4">
+                    <option disabled selected>Selecciona un tipo de vivienda</option>
+                    <option>Propia</option>
+                    <option>Alquilada</option>
+                    <option>Familiar</option>
+                  </select>
+                </div>
+            </div>
+        </div>
+      </div>
+    </ng-container>
+
+    <!-- Paso 2 -->
+    <ng-container *ngSwitchCase="2">
+      <!-- <app-datos-desembolso></app-datos-desembolso> -->
+      <div class="px-[20px] md:px-12 lg:px-24 my-9">
+        <!-- Banco -->
+        <div class="flex flex-col gap-6">
+          <h6 class="text-base font-semibold text-[#021442]">
+            Ingresa el banco al que deseas recibir la transferencia del dinero
+          </h6>
+          <select class="w-full md:w-[600px] lg:w-[916px] form-control">
+            <option disabled selected>Banco</option>
+            <option>Bancolombia</option>
+            <option>Davivienda</option>
+            <option>Nequi</option>
+          </select>
+        </div>
+        <!-- Separador -->
+        <div class="h-px bg-[#C8CED6] my-[26px]"></div>
+        <!-- Numero y tipo de cuenta -->
+        <div class="flex flex-col gap-6">
+          <h6 class="text-base font-semibold text-[#021442]">Ingresa tu tipo y número de cuenta</h6>
+          <div class="space-y-4">
+            <label class="flex items-center space-x-3 cursor-pointer">
+              <input type="radio" name="tipo_cuenta" value="ahorros" class="appearance-none h-6 w-6 border border-[#021442] rounded-full checked:border-[#021442] checked:ring-2 checked:ring-blue-500 focus:outline-none transition duration-150 ease-in-out">
+              <span class="text-base font-medium text-[#404040]">Ahorros</span>
+            </label>
+            <label class="flex items-center space-x-3 cursor-pointer">
+              <input type="radio" name="tipo_cuenta" value="corriente" class="appearance-none h-6 w-6 border border-[#021442] rounded-full checked:border-[#021442] checked:ring-2 checked:ring-blue-500 focus:outline-none transition duration-150 ease-in-out">
+              <span class="text-base font-medium text-[#404040]">Corriente</span>
+            </label>
+          </div>
+          <input type="number" placeholder="Número de cuenta" class="w-full md:w-[600px] lg:w-[916px] form-control" />
+        </div>
+      </div>
+    </ng-container>
+
+    <!-- Paso 3 -->
+    <ng-container *ngSwitchCase="3">
+      <!-- <app-datos-seguro></app-datos-seguro> -->
+      <div class="px-[20px] md:px-12 lg:px-24 my-9">
+
+        <h2 class="text-base font-normal text-[#021442] text-center leading-[130%]">
+          Al tomar este crédito adquirirás un seguro. <br> 
+          <a href="" class="font-semibold underline">Más información</a>
+        </h2>
+
+        <!-- Información importante -->
+        <div 
+            class="h-20 min-w-[320px] bg-[#FFF2F0] rounded-[5px] p-2 text-base font-normal my-6 flex items-start gap-2"
+            style="box-shadow: 0px 4px 10px 0px #00000033;"
+        >
+          <img src="/svgs/icon_vinculation-client.svg" alt="Vinculacion">  
+          <div>
+              <p class="font-extrabold">¡Importante!</p>
+              <p class="leading-[130%]">Ingresa mínimo un beneficiario y máximo tres</p>
+          </div>
+        </div>
+
+        <h5 class="text-xl font-semibold text-[#021442]">Beneficiario N°1</h5>
+        <div class="h-px bg-[#C8CED6] mt-3 mb-6"></div>
+
+        <div class="flex flex-col space-y-6">
+          <!-- Nombre beneficiario -->
+          <div class="flex flex-col gap-4">
+            <label class="text-base font-semibold text-[#021442]">
+              Nombre completo del beneficiario<span class="text-[#DF512C]">*</span>
+            </label>
+            <input 
+              type="text" placeholder="Nombre completo del beneficiario" 
+              class="w-full md:w-[600px] lg:w-[916px] form-control" 
+            />
+          </div>
+  
+          <!-- Tipo identificacion -->
+          <div class="flex flex-col gap-4">
+            <label class="text-base font-semibold text-[#021442]">
+              Tipo de identificación<span class="text-[#DF512C]">*</span>
+            </label>
+            <select class="w-full md:w-[600px] lg:w-[916px] form-control">
+              <option disabled selected>Selecciona el tipo de documento</option>
+              <option>CC</option>
+              <option>TI</option>
+            </select>
+          </div>
+
+          <!-- Numero identificación -->
+          <div class="flex flex-col gap-4">
+            <label class="text-base font-semibold text-[#021442]">
+              Nombre completo del beneficiario<span class="text-[#DF512C]">*</span>
+            </label>
+            <input 
+              type="text" placeholder="Nombre completo del beneficiario" 
+              class="w-full md:w-[600px] lg:w-[916px] form-control" 
+            />
+          </div>
+
+          <!-- Tipo Parentesco -->
+          <div class="flex flex-col gap-4">
+            <label class="text-base font-semibold text-[#021442]">
+              Parentesco<span class="text-[#DF512C]">*</span>
+            </label>
+            <select class="w-full md:w-[600px] lg:w-[916px] form-control">
+              <option disabled selected>Selecciona el parentesco</option>
+              <option>CC</option>
+              <option>TI</option>
+            </select>
+          </div>
+
+          <!-- Porcentaje -->
+          <div class="flex flex-col gap-4">
+            <label class="text-base font-semibold text-[#021442]">
+              Porcentaje asignado<span class="text-[#DF512C]">*</span>
+            </label>
+            <div class="flex gap-3">
+              <input 
+                type="text" 
+                placeholder="Ingresa el % del beneficiario" 
+                 class="w-full md:w-[600px] lg:w-[916px] form-control" 
+              />
+              <button type="button">
+                <img src="/svgs/icon_toltip-info.svg" alt="Información">
+              </button>
+            </div>
+          </div>
+
+          <!-- Añadir beneficiario -->
+          <div>
+            <button 
+              type="button" 
+              class="flex items-center space-x-3 underline text-base font-semibold text-[#DF512C]"
+            >
+              <img src="/svgs/icon_add.svg" alt="Añadir">
+              <span>Añadir beneficiario</span>
+            </button>
+
+            <!-- Texto de políticas -->
+            <p class="text-xs font-medium text-[#021442] mt-3">
+              Al diligenciar este formulario, acepta nuestras 
+              <a href="#" class="underline">políticas de manejo y tratamiento de datos</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+
+  </ng-container>
+</div>
+
+<!-- Botones -->
+<div class="w-full flex justify-between items-center gap-4 px-[20px] md:px-12 lg:px-24 mb-16">
+    <button 
+        (click)="currentStep = currentStep - 1"
+        class="btn btn-outline w-full flex items-center justify-center gap-[10px]"
+    >
+        <img src="/svgs/icon_arrow-back-orange.svg" alt="volver">
+        Regresar
+    </button>
+    <button 
+        (click)="currentStep = currentStep + 1"
+        disabled class="btn btn-primary w-full flex items-center justify-center gap-[10px]"
+    >
+        Continuar
+        <img src="/svgs/icon_arrow-rigth.svg" alt="Ingresar"/>
+    </button>
+</div>
+
+
+<!-- Modal: Suma porcentajes insuficientes  -->
+ <app-modal
+  [isOpen]="showSumPercentageModal"
+  [title]="''"
+  [showCancel]="false"
+  (onClose)="showSumPercentageModal = false"
+>
+  <div class="flex flex-col items-center text-center text-[#021442]">
+    <img src="/svgs/icon_warn.svg" alt="Advertencia">
+
+    <p class="text-xl text-[#021442] font-normal mt-3 mb-5">
+      La suma de los porcentajes asignados a los beneficiarios deben sumar el 100%
+    </p>
+
+    <div class="w-full">
+      <!-- Encabezado -->
+      <div class="flex justify-between text-base font-semibold text-[#021442] mb-3">
+        <span>Beneficiario</span>
+        <span>Porcentajes</span>
+      </div>
+
+      <!-- Lista de beneficiarios -->
+      <div class="space-y-3">
+        <div class="flex justify-between text-[#021442]">
+          <span>Nombre beneficiario 1</span>
+          <span class="text-base font-normal text-[#279CCD]">xxx%</span>
+        </div>
+        <div class="flex justify-between text-gray-700">
+          <span>Nombre beneficiario 2</span>
+          <span class="text-base font-normal text-[#279CCD]">xxx%</span>
+        </div>
+        <div class="flex justify-between text-gray-700">
+          <span>Nombre beneficiario 3</span>
+          <span class="text-base font-normal text-[#279CCD]">xxx%</span>
+        </div>
+      </div>
+
+      <!-- Total -->
+      <div class="mt-6 text-xl font-semibold text-[#021442]">
+        Porcentaje total: <span class="text-[#279CCD]">XXX%</span>
+      </div>
+    </div>
+
+    <!-- Botones -->
+    <div class="space-y-6 mt-6">
+      <button 
+        type="button" 
+        class="btn btn-primary w-full">
+        Continuar solicitud
+      </button>
+
+        <button 
+        type="button" 
+        class="btn btn-outline w-full">
+        Regresar
+      </button>
+    </div>
+  </div>
+</app-modal>

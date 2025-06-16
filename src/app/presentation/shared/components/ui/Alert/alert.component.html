@@ -1,0 +1,21 @@
+<div
+  *ngIf="message"
+  [ngClass]="{
+    'bg-[#FFF2F0] border-red-500 text-red-700': type === 'error',
+    'bg-green-50 border-green-500 text-green-700': type === 'success',
+    'bg-yellow-50 border-yellow-500 text-yellow-700': type === 'warning',
+    'bg-blue-50 border-blue-500 text-blue-700': type === 'info'
+  }"
+  class="h-16 p-2 text-sm rounded-[5px] flex items-center sha" 
+>
+  <svg class="m-2" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M11.7714 15.5428C10.88 15.5428 10.2857 14.9485 10.2857 14.0571V6.62854C10.2857 5.73711 10.88 5.14282 11.7714 5.14282C12.6628 5.14282 13.2571 5.73711 13.2571 6.62854V14.0571C13.2571 14.9485 12.6628 15.5428 11.7714 15.5428Z" fill="#DF512C"/>
+    <path d="M13.2572 18.5143C13.2572 19.3348 12.592 20 11.7715 20C10.951 20 10.2858 19.3348 10.2858 18.5143C10.2858 17.6938 10.951 17.0286 11.7715 17.0286C12.592 17.0286 13.2572 17.6938 13.2572 18.5143Z" fill="#DF512C"/>
+    <circle cx="12" cy="12" r="11.5" stroke="#DF512C"/>
+  </svg>
+
+  <div>
+    <p class="text-[12px] text-[#021442] font-bold">{{ strongText }}</p>  
+    <p class="text-[12px] text-[#021442] font-medium">{{ message }}</p>
+  </div>
+</div>

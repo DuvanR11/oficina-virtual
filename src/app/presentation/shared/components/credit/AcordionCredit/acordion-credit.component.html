@@ -1,0 +1,24 @@
+<div class="rounded-[40px] overflow-hidden shadow-sm bg-white">
+  <!-- Cabecera del acordeón -->
+  <div
+    class="h-14 px-6 py-3 flex justify-between items-center cursor-pointer"
+    (click)="toggleSection()"
+  >
+    <div class="flex items-center space-x-2">
+      <img [src]="icono" alt="icon" class="w-5 h-5" />
+      <span class="text-base text-[#021442] font-medium">{{ titulo }}</span>
+    </div>
+
+    <img 
+      src="/svgs/icon_arrow-down.svg" 
+      alt="Desplegar" 
+      class="w-4 h-4 transform transition-transform duration-300"
+      [ngClass]="{ 'rotate-180': isOpen }"
+    />
+  </div>
+
+  <!-- Contenido desplegable -->
+  <div *ngIf="isOpen" class="border-t border-gray-200 px-6 py-4 bg-gray-50 text-[#021442]">
+    <ng-content></ng-content>
+  </div>
+</div>

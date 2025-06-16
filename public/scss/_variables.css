@@ -1,0 +1,32 @@
+:root {
+  /* Paleta principal */
+  --paleta-principal-naranja: #df512c;
+  --paleta-principal-azul: #279ccd;
+  --paleta-principal-azul-oscuro: #021442;
+  --paleta-principal-blanco: #ffffff;
+
+  /* Paleta secundaria */
+  --paleta-secundaria-amarillo: #f4bb47;
+  --paleta-secundaria-verde: #92cd91;
+  --paleta-secundaria-lila: #9494e5;
+  --paleta-secundaria-gris-claro: #c8ced6;
+  --paleta-secundaria-gris-medio: #808080;
+  --paleta-secundaria-gris-oscuro: #404040;
+
+  /* Fondos principales */
+  --fondo-principal-naranja-claro: #fff2f0;
+  --fondo-principal-azul-claro: #e6fbff;
+  --fondo-principal-azul-medio: #e0eefc;
+  --fondo-principal-amarillo-claro: #fcf8ea;
+
+  /* Fondos secundarios */
+  --fondo-secundario-verde: #92cd9133;
+  --fondo-secundario-lila1: #9494e533;
+  --fondo-secundario-lila2: #80808033;
+
+  /* Estados */
+  --state-success: #2cc194;
+  --state-warning: #ff8b15;
+  --state-azul: #007ae2;
+
+}

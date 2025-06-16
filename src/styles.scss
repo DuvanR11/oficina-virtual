@@ -1,0 +1,83 @@
+/* You can add global styles to this file, and also import other style files */
+@use "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600&display=swap");
+@import "../public/scss/_theme.css";
+
+* {
+  font-family: Manrope;
+}
+
+// TIPOGRAFY
+.text-color-primary {
+    color: #021442;
+}
+
+
+// FORMS
+.form-control {
+  height: 48px;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-right: 12px;
+  padding-bottom: 10px;
+  padding-left: 16px;
+  gap: 10px;
+  border: 1px solid #808080;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 1%;
+  color: #808080;
+}
+
+
+// BUTTONS
+
+/* Estilos base para todos los botones */
+.btn {
+  padding: 8px 20px; 
+  border-radius: 22.5px;   
+  font-weight: 600;        
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+  height: 45px;
+}
+
+/* Botón primario */
+.btn-primary {
+  background-color: #DF512C;
+  color: #ffffff;
+  box-shadow: 0px 3px 5px 0px #0000001A;
+}
+
+/* Botón outline primario */
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid #DF512C;
+  color: #DF512C;
+}
+
+/* Botón secundario */
+.btn-secondary {
+  background-color: #021442;
+  color: #ffffff;
+  box-shadow: 0px 3px 5px 0px #0000001A;
+}
+
+/* Botón outline secundario */
+.btn-secondary-outline {
+  background-color: transparent;
+  border: 2px solid #021442;
+  color: #021442;
+}
+
+/* Botón deshabilitado */
+.btn-disabled,
+.btn[disabled] {
+  color: #808080;
+  border: 0;
+  background-color: #80808033;
+  box-shadow: 0px 3px 5px 0px #0000001A;
+  cursor: not-allowed;
+}

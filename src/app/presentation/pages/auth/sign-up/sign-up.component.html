@@ -1,0 +1,119 @@
+<div class="w-full flex flex-col justify-center items-center px-[20px] md:px-12 lg:px-24">
+  <h2 class="text-[32px] font-semibold text-[#011C49] mt-[46px] mb-[29px]">Crear usuario</h2>
+
+  <!-- Alerta -->
+  
+  <!-- Formulario -->
+  <form class="w-full md:max-w-[600px] lg:max-w-[916px] flex flex-col space-y-[19px]">
+    
+    <app-alert
+      type="error"
+      strongText="¡Importante!"
+      message="Para realizar el registro debes diligenciar cada uno de los campos."
+    ></app-alert>
+
+    <select class="w-full md:w-[600px] lg:w-[916px] form-control mt-[26px] md:mt-[17px]">
+      <option>Tipo de documento</option>
+    </select>
+
+    <input type="text" placeholder="Número de documento" class="w-full md:w-[600px] lg:w-[916px] form-control" />
+    <input type="text" placeholder="Nombre completo" class="w-full md:w-[600px] lg:w-[916px] form-control" />
+    <input type="text" placeholder="Apellidos" class="w-full md:w-[600px] lg:w-[916px] form-control" />
+    <input type="email" placeholder="Correo electrónico" class="w-full md:w-[600px] lg:w-[916px] form-control" />
+    <input type="tel" placeholder="Número celular" class="w-full md:w-[600px] lg:w-[916px] form-control" />
+    <div class="w-full h-[1px] bg-[#DF512C]"></div>
+    <input type="password" placeholder="Nueva contraseña" class="w-full md:w-[600px] lg:w-[916px] form-control" />
+    <input type="password" placeholder="Confirmar nueva contraseña" class="w-full md:w-[600px] lg:w-[916px] form-control" />
+
+    <!-- Aviso legal -->
+    <p class="text-xs text-center font-medium text-[#021442]">
+      La información de contacto y datos personales que aquí suministres será almacenada, 
+      usada y tratada por la Corporación Interactuar para los fines relacionados en la 
+      política de tratamientos de datos personales. Al diligenciar este formulario aceptas
+      haber leído y estar de acuerdo con nuestras  <br>
+      <a href="#" class="text-[#021442] font-bold underline">Política de Tratamiento de Datos Personales</a>.
+    </p>
+
+    <!-- Captcha -->
+    <div class="flex justify-center">
+      <div class="g-recaptcha" data-sitekey="6LdN-2AnAAAAAKdQJFEx-fPyAJ2VhGJ8ArjBOzbZ"></div>
+    </div>
+
+    <div class="w-full flex flex-col items-center justify-center md:flex-col lg:flex-row gap-[22px]">
+      <button type="submit" class="btn btn-primary w-full md:w-[248px] lg:w-[288px]">
+        Crear
+      </button>
+      <button type="button" class="btn btn-outline w-full md:w-[248px] lg:w-[288px]">
+        Cancelar
+      </button>
+    </div>
+  </form>
+</div>
+
+<!-- Modal: No pudimos validar tus datos -->
+<app-modal
+  [isOpen]="showInValidationDataModal"
+  [title]="'Eliminar registro'"
+  (onClose)="showInValidationDataModal = false"
+>
+  <div class="flex flex-col items-center text-center text-[#021442]">
+    <!-- Icono de advertencia -->
+    <img src="/svgs/icon_warn.svg" alt="Advertencia">
+
+    <h5 class="text-xl text-[#021442] font-semibold mt-3 mb-5">Parece que ya eres cliente</h5>
+
+    <!-- Información -->
+    <p class="text-base font-normal text-[#021442]">
+      Los datos que ingresaste son: <br/>
+      <span class="font-semibold">C.C. 1023662769</span>
+    </p>
+
+    <ul class="text-base font-normal text-[#021442] list-disc list-inside text-left md:text-center mt-3 mb-5">
+      <li>Si hay un error, por favor corrígelo y vuelve a intentarlo.</li>
+      <li class="mt-3">
+        Si los datos están bien, es posible que aún no seas cliente de Interactuar o que no tengas una cuenta activa.
+      </li>
+    </ul>
+
+    <p class="text-base font-normal text-[#021442]">
+      Puedes comunicarte con uno de nuestros asesores en el botón de aquí abajo:
+    </p>
+
+    <!-- Botón de acción -->
+    <button 
+      type="button" 
+      class="btn btn-primary w-full mt-6 flex items-center justify-center gap-[10px]">
+      <img src="/svgs/icon_whatsapp.svg" alt="WhatsApp"/>
+      Habla con nosotros
+    </button>
+  </div>
+</app-modal>
+
+<!-- Modal: Envio codigo OTP -->
+ <app-modal
+  [isOpen]="showSendOtpModal"
+  [title]="''"
+  [showCancel]="false"
+  (onClose)="showSendOtpModal = false"
+>
+  <div class="flex flex-col items-center text-center text-[#021442]">
+    <img src="/svgs/icon_otp.svg" alt="Codigo Otp" class="mb-3"/>
+
+    <p class="text-xl font-normal">
+      Por tu seguridad debemos validar tu identidad por ser la primera vez.
+    </p>
+
+    <p class="text-xl font-normal mt-4">
+      Para continuar se enviará un código de verificación a tu número celular y/o correo electrónico.
+    </p>
+
+    <button 
+      type="button" 
+      class="btn btn-primary w-full mt-6 flex items-center justify-center gap-[10px]">
+      <!-- (click)="sendVerification()" -->
+      Enviar notificación
+      <img src="/svgs/icon_arrow-rigth.svg" alt="Continuar"/>
+    </button>
+  </div>
+</app-modal>
+

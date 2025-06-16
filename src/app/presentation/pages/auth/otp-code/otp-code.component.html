@@ -1,0 +1,69 @@
+<div class="w-full flex flex-col justify-center items-center px-[20px] md:px-12 lg:px-24">
+   <div class="mb-6">
+    <h2 class="text-[32px] font-semibold text-[#011C49] text-left md:text-center mt-[36px]">Ingresa tu código</h2>
+    <p class="text-xl font-normal text-[#021442] text-left md:text-center mt-1">
+      Escribe el código que enviamos a tu número celular y al correo<br />
+      Celular: <span class="font-semibold">+57 *** *** **78.</span><br />
+      Correo: <span class="font-semibold">{{ 'sar******@gmail.com' }}</span>
+    </p>
+  </div>
+
+  <!-- Código -->
+  <form class="w-full flex flex-col items-center">
+
+    <div class="w-[320px] flex justify-between gap-3 mb-10">
+      <input maxlength="1" class="w-[42px] h-[45px] text-center border border-[#808080] rounded-[5px] text-[42px] text-[#021442] font-medium" />
+      <input maxlength="1" class="w-[42px] h-[45px] text-center border border-[#808080] rounded-[5px] text-[42px] text-[#021442] font-medium" />
+      <input maxlength="1" class="w-[42px] h-[45px] text-center border border-[#808080] rounded-[5px] text-[42px] text-[#021442] font-medium" />
+      <input maxlength="1" class="w-[42px] h-[45px] text-center border border-[#808080] rounded-[5px] text-[42px] text-[#021442] font-medium" />
+      <input maxlength="1" class="w-[42px] h-[45px] text-center border border-[#808080] rounded-[5px] text-[42px] text-[#021442] font-medium" />
+      <input maxlength="1" class="w-[42px] h-[45px] text-center border border-[#808080] rounded-[5px] text-[42px] text-[#021442] font-medium" />
+    </div>
+
+    <!-- Temporizador -->
+    <p class="text-center text-base font-normal text-[#021442] mb-9">Enviar código nuevamente en <span class="text-[#279CCD] font-semibold"> 00:44</span></p>
+
+    <!-- Botones -->
+    <div class="w-full flex flex-col items-center justify-center md:flex-col lg:flex-row gap-[22px]">
+      <button 
+        type="submit" 
+        disabled
+        class="btn btn-primary w-full flex items-center justify-center gap-[10px]"
+      >
+        Siguiente
+        <img src="/svgs/icon_arrow-rigth.svg" alt="Siguiente"/>
+      </button>
+      <button type="button" class="btn btn-outline w-full">
+        Cerrar
+      </button>
+    </div>
+  </form>
+</div>
+
+
+<app-modal
+  [isOpen]="showSuccessModal"
+  [title]="''"
+  [showCancel]="false"
+  (onClose)="showSuccessModal = false"
+>
+  <div class="flex flex-col items-center text-center text-[#021442] gap-0">
+    <img src="/svgs/icon_check.svg" alt="Éxito"/>
+
+    <h3 class="text-[28px] text-[#021442] font-semibold mt-7 mb-2">¡Usuario creado exitosamente!</h3>
+    
+    <p class="text-xl font-normal mb-10">
+      Puedes iniciar nuevamente <br class="block md:hidden" />
+      con tu usuario y contraseña
+    </p>
+
+    <button 
+      type="button" 
+      class="btn btn-primary w-full flex items-center justify-center gap-[10px]"
+    >
+      <!-- (click)="goToLogin()" -->
+      Ingresar
+       <img src="/svgs/icon_arrow-rigth.svg" alt="Ingresar"/>
+    </button>
+  </div>
+</app-modal>

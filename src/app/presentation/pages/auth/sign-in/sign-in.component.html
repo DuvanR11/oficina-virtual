@@ -1,0 +1,70 @@
+<div class="w-full flex flex-col justify-center items-center px-[20px] md:px-12 lg:px-24">
+  <h2 class="text-[32px] font-semibold text-[#011C49] mt-[46px]">Oficina Virtual</h2>
+  <div class="w-48 h-[1px] bg-[#DF512C] my-[9.5px]"></div>
+    
+  <h4 class="text-2xl font-semibold text-[#021442]">¡Hola!</h4>
+  <p class="text-base font-normal text-[#021442] mt-[8px] mb-[47px] text-center">
+    Ingresa los datos para gestionar tus <br/>
+    créditos y preaprobados
+  </p>
+
+  <form class="w-full md:max-w-[600px] lg:max-w-[916px] flex flex-col">
+    <div class="w-full flex flex-col items-center gap-[19px]">
+      <input
+        type="text"
+        placeholder="Número de documento"
+        class="w-full md:w-[600px] lg:w-[916px] form-control"
+      />
+      <input
+        type="password"
+        placeholder="Contraseña"
+        class="w-full md:w-[600px] lg:w-[916px] form-control"
+      />
+    </div>
+
+    <div class="mt-[25px] mb-[34px]">
+      <a href="#" class="text-xs text-left text-[#021442] font-bold underline">
+        ¿Olvidaste tu contraseña?
+      </a>
+    </div>
+
+    <div class="w-full flex flex-col items-center justify-center md:flex-col lg:flex-row gap-[22px]">
+      <button type="submit" class="btn btn-primary w-full md:w-[248px] lg:w-[288px]">
+        Iniciar sesión
+      </button>
+      <button type="button" class="btn btn-outline w-full md:w-[248px] lg:w-[288px]">
+        Crear usuario
+      </button>
+    </div>
+  </form>
+</div>
+
+<!-- Modal: Navegador incompatible  -->
+ <app-modal
+  [isOpen]="showBrowserErrorModal"
+  [title]="''"
+  [showCancel]="false"
+  (onClose)="showBrowserErrorModal = false"
+>
+  <div class="flex flex-col items-center text-center text-[#021442]">
+    <img src="/svgs/icon_warn.svg" alt="Advertencia">
+
+    <h3 class="text-[28px] text-[#021442] font-semibold mt-[12px] mb-[8px]">Error en el navegador</h3>
+
+    <p class="text-xl text-[#021442] font-normal mb-4">
+      Parece que este navegador no es compatible con esta versión de la Oficina Virtual.
+    </p>
+
+    <p class="text-xl text-[#021442] font-normal">
+      Intenta ingresando de nuevo <br class="block md:hidden">
+      con otro navegador.
+    </p>
+
+    <button 
+      type="button" 
+      class="btn btn-primary w-full md:w-[248px] lg:w-[288px] mt-[36px]">
+      <!-- (click)="closeBrowserErrorModal()" -->
+      Cerrar
+    </button>
+  </div>
+</app-modal>

@@ -1,0 +1,24 @@
+<div 
+    *ngIf="isVisible" 
+    class="relative h-[133px] text-white p-3 rounded-lg" 
+    style="background: url('/images/back_heart_banner.png'); background-size: cover;"
+>
+  <!-- Icono corazón -->
+  <div class="flex items-start space-x-2 z-50">
+    <img src="/svgs/icon_heart.svg" alt="Icono"/>
+
+    <div class="text-xs">
+      <p class="font-bold">¡Eres beneficiario del seguro <br> paramétrico de Interactuar!</p>
+      <p class="font-medium mt-3">Este protege a tu unidad productiva ante <br> el exceso o déficit de lluvia.</p>
+    
+      <div class="text-right">
+        <a href="#" class="text-base font-normal underline mt-3 inline-block">Conócelo aquí</a>
+      </div>
+    </div>
+
+    <!-- Botón cerrar -->
+    <button (click)="closeBanner()" class="absolute top-3 right-3">
+      <img src="/svgs/icon_cancel-white.svg" alt="Cancel"/>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,133 @@
+
+<!-- Título -->
+<div class="h-[65px] flex items-center justify-between px-5 py-1" style="box-shadow: 0px 3px 5px 0px #0000001A;">
+  <button>
+    <img src="/svgs/icon_arrow-back.svg" alt="Volver">
+  </button>
+  <h5 class="text-xl font-semibold text-[#021442]">Simulación de crédito</h5>
+</div>
+
+<!-- Card: Información -->
+<div class="text-center text-[#021442] bg-[#E6FBFF] py-5 px-4 mb-6">
+    <h2 class="text-xl font-semibold mb-[10px]">Montos y plazos disponibles:</h2>
+    <p class="text-base font-normal">
+        Puedes solicitar de <span class="font-extrabold">$800.000</span> a <br> <span class="font-extrabold">$8.541.000</span>,
+        entre <span class="font-extrabold">4 y 36 meses</span>.
+    </p>
+    <p class="text-base font-normal">Este límite aplica solo en este canal <br> digital.</p>
+    <p class="text-base font-normal">¿Necesitas más? Contáctanos:</p>
+    <div class="flex justify-center gap-7 mt-3">
+        <button 
+            class="bg-[#279CCD] h-[32px] min-w-[150px] text-white px-3 py-1 rounded-full text-base font-semibold flex items-center gap-[10px]" style="box-shadow: 0px 3px 5px 0px #0000001A;"
+        >
+            <img src="/svgs/icon_phone.svg"/> Llámanos
+        </button>
+        <button 
+            class="bg-[#DF512C] h-[32px] min-w-[150px] text-white px-3 py-1 rounded-full text-base font-semibold flex items-center gap-[10px]" style="box-shadow: 0px 3px 5px 0px #0000001A;"
+        >
+            <img src="/svgs/icon_whatsapp.svg"/> WhatsApp
+        </button>
+    </div>
+</div>
+
+<!-- Contenido -->
+<div class="px-[20px] md:px-12 lg:px-24 space-y-6">
+
+    <!-- Formulario -->
+    <div class="space-y-6 mb-9">
+        <div>
+            <label class="text-[#021442] text-base font-semibold">¿Cuánto dinero necesitas?<span class="text-[#DF512C]">*</span></label>
+            <input
+                type="number"
+                placeholder="Ingresa el monto a solicitar"
+                class="w-full md:w-[600px] lg:w-[916px] form-control mt-4"
+            />
+        </div>
+
+        <div>
+            <label class="text-[#021442] text-base font-semibold">¿En cuántos meses deseas pagar?<span class="text-[#DF512C]">*</span></label>
+            <input
+                type="number"
+                placeholder="Ingresa el plazo"
+                class="w-full md:w-[600px] lg:w-[916px] form-control mt-4" 
+            />
+        </div>
+    </div>
+
+    <!-- Botón -->
+    <button
+        class="btn btn-primary w-full md:w-[248px] lg:w-[288px]"
+    >
+        Simular crédito
+    </button>
+</div>
+
+<!-- Modal: Solicitud de credito -->
+<app-modal
+  [isOpen]="showRequestModal"
+  [title]="'Eliminar registro'"
+  (onClose)="showRequestModal = false"
+>
+  <div class="flex flex-col items-center text-[#021442]">
+    
+    <!-- Título -->
+    <h4 class="text-center text-2xl font-semibold mb-[10px]">Ten en cuenta</h4>
+    <p class="text-center text-base font-normal">La aprobación del crédito depende de un estudio.</p>
+
+    <!-- Información importante -->
+    <div 
+        class="h-20 min-w-[276px] bg-[#FFF2F0] rounded-[5px] p-2 text-xs font-medium mt-[10px] mb-[30px] flex items-start gap-2"
+        style="box-shadow: 0px 4px 10px 0px #00000033;"
+    >
+      <img src="/svgs/icon_info-black.svg" alt="Volver">  
+      <div>
+          <p class="font-bold">¡Importante!</p>
+          <p>
+            Los valores son aproximados y no <br>
+            garantizan la aprobación ni el valor final <br>
+             del crédito.
+          </p>
+      </div>
+    </div>
+
+    <!-- Resumen de simulación -->
+    <div class="h-[153px] w-full bg-[#E6FBFF] rounded-[10px] p-4 text-center mb-6" style="box-shadow: 0px 4px 10px 0px #00000033;">
+        <p class="text-base font-normal text-[#DF512C]">Monto</p>
+        <p class="text-xl font-medium text-[#021442] mb-0.5">$4,000,000</p>
+
+        <div class="border-t border-[#DF512C] mb-2"></div>
+
+        <!-- Cuota mensual y Número de cuotas -->
+        <div class="flex text-left text-xs text-[#021442]">
+            <!-- Cuota mensual -->
+            <div class="w-1/2 pr-2 border-r border-[#DF512C]">
+            <p class="text-[#DF512C] font-medium">Cuota mensual</p>
+            <p class="text-xl font-medium">$402,460</p>
+            <p class="text-[#279CCD] text-xs font-bold">Cuota aproximada*</p>
+            </div>
+
+            <!-- Número de cuotas -->
+            <div class="w-1/2 pl-2">
+            <p class="text-[#DF512C] font-medium">Número de cuotas</p>
+            <p class="text-xl font-medium">12</p>
+            <p class="text-[#279CCD] text-xs font-bold">Meses</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botones -->
+    <div class="space-y-6">
+        <button 
+          type="button" 
+          class="btn btn-primary w-full">
+          Solicitar crédito
+        </button>
+    
+         <button 
+          type="button" 
+          class="btn btn-outline w-full">
+          Simular de nuevo
+        </button>
+    </div>
+  </div>
+</app-modal>
