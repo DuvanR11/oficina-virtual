@@ -23,7 +23,7 @@ export class DetailCreditComponent {
     @Output() back = new EventEmitter<void>();
 
     //  Modals
-    showSuccessModal: boolean = true
+    showSuccessModal: boolean = false
 
     onSubmit() {
         this.submit.emit();

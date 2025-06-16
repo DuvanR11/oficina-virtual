@@ -10,7 +10,7 @@ import { SharedModule } from '../../shared/shared.module';
 export class HomeComponent {
 
   // Modals
-  showSuccessModal: boolean = true
+  showSuccessModal: boolean = false
 
 
   certificados = [

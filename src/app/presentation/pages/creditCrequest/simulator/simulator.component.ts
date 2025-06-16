@@ -9,7 +9,7 @@ import { SharedModule } from '../../../shared/shared.module';
 export class SimulatorComponent {
 
   //Modals
-  showRequestModal: boolean = true;
+  showRequestModal: boolean = false;
 
   montoSolicitado: number | null = null;
   plazoMeses: number | null = null;

@@ -20,7 +20,7 @@ export class CreditRequestComponent implements OnInit {
   currentStep = 3;
 
   // Modals
-  showSumPercentageModal: boolean = true;
+  showSumPercentageModal: boolean = false;
 
   constructor(private fb: FormBuilder) {}
 

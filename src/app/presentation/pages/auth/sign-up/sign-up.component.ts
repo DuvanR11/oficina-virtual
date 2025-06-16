@@ -11,7 +11,7 @@ export class SignUpComponent {
 
   // Modals
   showInValidationDataModal: boolean = false;
-  showSendOtpModal: boolean = true;
+  showSendOtpModal: boolean = false;
 
   resolved(captchaResponse: string) { }
 }

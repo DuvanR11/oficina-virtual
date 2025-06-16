@@ -22,7 +22,7 @@ import { SharedModule } from '../../../shared/shared.module';
 })
 export class SignInComponent {
   // Modals
-  showBrowserErrorModal: boolean = true
+  showBrowserErrorModal: boolean = false
   
   form: FormGroup;
 

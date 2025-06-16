@@ -10,5 +10,5 @@ import { SharedModule } from '../../../shared/shared.module';
 export class OtpCodeComponent {
 
   // Modals
-  showSuccessModal: boolean = true
+  showSuccessModal: boolean = false
 }
